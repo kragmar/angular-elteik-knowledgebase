@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 // creates express app
 const app = express();
@@ -11,9 +12,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-var db;
+//var db;
 
-// Connect to the database before starting the application server.
+mongoose.Promise = global.Promise;
+
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+                .then(() => {
+                  console.log("Succesfully connected to the database");
+                  // Serve only the static files form the dist directory
+                  app.use(express.static(__dirname + '/dist/angular-elteik-knowledgebase'));
+
+                  app.get('/*', function(req,res) {
+                    res.sendFile(path.join(__dirname + '/dist/angular-elteik-knowledgebase/index.html'));
+                  });
+
+                  // Initialize the app.
+                  const server = app.listen(process.env.PORT || 8080, function () {
+                    const port = server.address().port;
+                    console.log("App now running on port", port);
+                  });
+                }).catch(err => {
+                  console.log("Could not connect to database. Exiting now...", err);
+                  process.exit();
+                });
+
+/* // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://drumkiller:QayWsxEdc123@ds149706.mlab.com:49706/heroku_bml37ltr", function (err, client) {
   if (err) {
     console.log(err);
@@ -25,10 +48,10 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://drumkiller:Qay
   console.log("Database connection ready");
 
   // Serve only the static files form the dist directory
-  app.use(express.static(__dirname + '/dist/student-scheduler-client'));
+  app.use(express.static(__dirname + '/dist/angular-elteik-knowledgebase'));
 
   app.get('/*', function(req,res) {  
-    res.sendFile(path.join(__dirname + '/dist/student-scheduler-client/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/angular-elteik-knowledgebase/index.html'));
   });
 
   // Initialize the app.
@@ -43,3 +66,4 @@ function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
   res.status(code || 500).json({"error": message});
 }
+ */
