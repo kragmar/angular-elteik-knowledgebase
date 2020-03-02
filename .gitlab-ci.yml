@@ -25,6 +25,8 @@ build:
     artifacts:
         paths:
             - dist/
+    only:
+        - master
     
 
 production:
