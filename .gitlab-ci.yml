@@ -1,0 +1,37 @@
+image: node:latest
+
+variables:
+  CI_ARTIFACT_NAME: ${CI_PROJECT_NAME}-dist.zip
+
+before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+
+stages:
+    - test
+    - build
+    - production
+
+build:
+    type: build
+    stage: build
+    cache:
+        paths:
+            - node_modules/
+    script:
+        - npm install --quiet
+        - npm run build-prod
+    artifacts:
+        paths:
+            - dist/
+    
+
+production:
+    type: deploy
+    stage: production
+    image: ruby:latest
+    script:
+        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+    only:
+        - master
