@@ -48,16 +48,12 @@ build:
 
 deploy_prod:
     stage: deploy
-    environment:
-        name: production
-    url: $FIREBASE_URL
+    environment: production
     only:
         - master
     dependencies:
         - build
     cache:
         policy: pull
-    paths:
-        - node_modules/
     script:
         - npm run deploy
