@@ -11,14 +11,14 @@ before_script:
 stages:
     - test
     - build
-    - production
+    - deploy
 
-test:
-    type: test
-    stage: test
-    script:
-        - echo "[TEST] Running tests"
-        - npm run test
+#test:
+#    type: test
+#    stage: test
+#    script:
+#        - echo "[TEST] Running tests"
+#        - npm run test
 
 build:
     type: build
@@ -37,11 +37,27 @@ build:
         - master
     
 
-production:
-    type: deploy
-    stage: production
-    image: ruby:latest
-    script:
-        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+#production:
+#    type: deploy
+#    stage: deploy
+#    image: ruby:latest
+#    script:
+#        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+#    only:
+#        - master
+
+deploy_prod:
+    stage: deploy
+    environment:
+        name: production
+    url: $FIREBASE_URL
     only:
         - master
+    dependencies:
+        - build
+    cache:
+        policy: pull
+    paths:
+        - node_modules/
+        script:
+          - npm run deploy
