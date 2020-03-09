@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-prod": "ng build --prod",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN --non-interactive"
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN --non-interactive --project eltevedtem"
   },
   "private": true,
   "dependencies": {
