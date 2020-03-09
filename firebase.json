@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/angular-elteik-knowledgebase",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

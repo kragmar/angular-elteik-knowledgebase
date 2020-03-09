@@ -5,13 +5,20 @@ variables:
 
 before_script:
     - apt-get update -qy
-    - apt-get install -y ruby-dev
-    - gem install dpl
+#    - apt-get install -y ruby-dev    <-- needed for heroku deploy
+#    - gem install dpl                <-- needed for heroku deploy
 
 stages:
     - test
     - build
-    - production
+    - deploy
+
+#test:
+#    type: test
+#    stage: test
+#    script:
+#        - echo "[TEST] Running tests"
+#        - npm run test
 
 build:
     type: build
@@ -20,20 +27,44 @@ build:
         paths:
             - node_modules/
     script:
+        - echo "[BUILD] Building the app"
         - npm install --quiet
         - npm run build-prod
     artifacts:
         paths:
             - dist/
-    only:
-        - master
     
 
-production:
-    type: deploy
-    stage: production
-    image: ruby:latest
+#production:
+#    type: deploy
+#    stage: deploy
+#    image: ruby:latest
+#    script:
+#        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+#    only:
+#        - master
+
+deploy_dev:
+    stage: deploy
+    environment: development
+    only:
+        - develop
+    dependencies:
+        - build
+    cache:
+        policy: pull
     script:
-        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+        - npm install firebase-tools
+        - npm run deploy
+
+deploy_prod:
+    stage: deploy
+    environment: production
     only:
         - master
+    dependencies:
+        - build
+    cache:
+        policy: pull
+    script:
+        - npm run deploy
