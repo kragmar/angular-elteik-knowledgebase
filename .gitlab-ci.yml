@@ -33,6 +33,8 @@ build:
     artifacts:
         paths:
             - dist/
+    only:
+        - master
     
 
 #production:
@@ -44,18 +46,18 @@ build:
 #    only:
 #        - master
 
-deploy_dev:
-    stage: deploy
-    environment: development
-    only:
-        - develop
-    dependencies:
-        - build
-    cache:
-        policy: pull
-    script:
-        - npm install firebase-tools
-        - npm run deploy
+#deploy_dev:
+#    stage: deploy
+#    environment: development
+#    only:
+#        - develop
+#    dependencies:
+#        - build
+#    cache:
+#        policy: pull
+#    script:
+#        - npm install firebase-tools
+#        - npm run deploy
 
 deploy_prod:
     stage: deploy
@@ -67,4 +69,5 @@ deploy_prod:
     cache:
         policy: pull
     script:
+        - npm install firebase-tools
         - npm run deploy
