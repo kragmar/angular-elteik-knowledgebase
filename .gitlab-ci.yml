@@ -54,7 +54,7 @@ deploy_dev:
     cache:
         policy: pull
     script:
-#        - npm install firebase-tools
+        - npm install firebase-tools
         - npm run deploy
 
 deploy_prod:
