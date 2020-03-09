@@ -46,6 +46,18 @@ build:
 #    only:
 #        - master
 
+deploy_dev:
+    stage: deploy
+    environment: development
+    only:
+        - develop
+    dependencies:
+        - build
+    cache:
+        policy: pull
+    script:
+        - npm run deploy
+
 deploy_prod:
     stage: deploy
     environment: production
