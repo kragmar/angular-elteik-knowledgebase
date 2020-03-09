@@ -5,8 +5,8 @@ variables:
 
 before_script:
     - apt-get update -qy
-    - apt-get install -y ruby-dev
-    - gem install dpl
+#    - apt-get install -y ruby-dev    <-- needed for heroku deploy
+#    - gem install dpl                <-- needed for heroku deploy
 
 stages:
     - test
@@ -56,6 +56,7 @@ deploy_dev:
     cache:
         policy: pull
     script:
+        - npm install firebase-tools
         - npm run deploy
 
 deploy_prod:
