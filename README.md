@@ -1,27 +1,44 @@
-# AngularElteikKnowledgebase
+# ELTÉvedtem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-Browser
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Running the tests
 
-## Running unit tests
+Explain how to run the automated tests for this system
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Break down into end to end tests
 
-## Running end-to-end tests
+Explain what these tests test and why
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+Give an example
+```
 
-## Further help
+### And coding style tests
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+tbd
+
+## Built With
+
+* [Visual Studio Code](https://code.visualstudio.com/)  - IDE
+* [Angular9](https://maven.apache.org/) - 
+
+
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
