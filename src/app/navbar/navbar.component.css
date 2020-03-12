@@ -1,0 +1,21 @@
+ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 1em;
+}
+
+li a:hover {
+    background: #0F0;
+}
