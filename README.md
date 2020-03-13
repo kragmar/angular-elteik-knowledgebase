@@ -1,3 +1,4 @@
+
 # ELTÉvedtem
 
 
@@ -5,7 +6,7 @@
 
 ### Prerequisites
 
--Browser
+* Browser
 
 
 ## Running the tests
@@ -35,10 +36,13 @@ tbd
 ## Built With
 
 * [Visual Studio Code](https://code.visualstudio.com/)  - IDE
-* [Angular9](https://maven.apache.org/) - 
-
-
+* [Angular9](https://angular.io/) - framework 
+* [StackEdit](https://stackedit.io/) - 
+* [StackBlitz](https://stackblitz.com/) - 
+* [Firebase](https://firebase.google.com/) - Host, database
+* [GitLab]((https://about.gitlab.com/)) - CI/CD
 
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
