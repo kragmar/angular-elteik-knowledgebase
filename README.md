@@ -1,27 +1,47 @@
-# AngularElteikKnowledgebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+# ELTÉvedtem
 
-## Development server
+A knowlegdebase for ELTE IK students, allowing easy access to information about their classes, lectures, teachers.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisites
 
-## Code scaffolding
+![prerequisits](https://github.com/kragmar/angular-elteik-knowledgebase/blob/develop/doc/2020-03-13%2009_59_35-Angular%20-%20Browser%20support.png "prerequisits")
+> Screencapture from [https://angular.io/guide/browser-support](https://angular.io/guide/browser-support)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Running the tests
 
-## Build
+Explain how to run the automated tests for this system
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Break down into end to end tests
 
-## Running unit tests
+Explain what these tests test and why
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+Give an example
+```
 
-## Running end-to-end tests
+### And coding style tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Explain what these tests test and why
 
-## Further help
+```
+Give an example
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Deployment
+
+tbd
+
+## Built With
+
+* [Visual Studio Code](https://code.visualstudio.com/)  - IDE
+* [Angular9](https://angular.io/) - framework 
+* [StackEdit](https://stackedit.io/) - 
+* [StackBlitz](https://stackblitz.com/) - 
+* [Firebase](https://firebase.google.com/) - Host, database
+* [GitLab]((https://about.gitlab.com/)) - CI/CD
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
