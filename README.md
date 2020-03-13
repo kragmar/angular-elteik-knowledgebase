@@ -6,7 +6,7 @@ A knowlegdebase for ELTE IK students, allowing easy access to information about 
 ### Prerequisites
 
 ![prerequisits](https://github.com/kragmar/angular-elteik-knowledgebase/blob/develop/doc/2020-03-13%2009_59_35-Angular%20-%20Browser%20support.png "prerequisits")
-
+> Screencapture from [https://angular.io/guide/browser-support](https://angular.io/guide/browser-support)
 
 ## Running the tests
 
