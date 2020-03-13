@@ -40,7 +40,7 @@ tbd
 * [StackEdit](https://stackedit.io/) - 
 * [StackBlitz](https://stackblitz.com/) - 
 * [Firebase](https://firebase.google.com/) - Host, database
-* [GitLab]((https://about.gitlab.com/)) - CI/CD
+* [GitLab](https://about.gitlab.com/) - CI/CD
 
 ## Versioning
 
