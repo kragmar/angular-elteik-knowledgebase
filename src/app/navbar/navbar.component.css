@@ -24,6 +24,10 @@ mat-icon {
     margin-right: .5em;
 }
 
+li .nav-active {
+    background: #3949AB;
+}
+
 .nav-logout {
     margin-left: auto;
     margin-right: 0;
