@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -31,9 +32,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatToolbarModule,
     LayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
+  ],
+  exports: [
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
