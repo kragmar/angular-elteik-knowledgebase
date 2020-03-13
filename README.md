@@ -17,10 +17,11 @@ A knowlegdebase for ELTE IK students, allowing easy access to information about 
 
 ## Running the tests
 
-WIP
+**WIP**
 
 ### Break down into end to end tests
-WIP
+**WIP**
+
 Explain what these tests test and why
 
 ```
@@ -28,7 +29,7 @@ Give an example
 ```
 
 ### And coding style tests
-WIP
+**WIP**
 Explain what these tests test and why
 
 ```
