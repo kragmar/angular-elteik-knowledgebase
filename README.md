@@ -1,12 +1,11 @@
 
 # ELTÉvedtem
 
-
-
+A knowlegdebase for ELTE IK students, allowing easy access to information about their classes, lectures, teachers.
 
 ### Prerequisites
 
-* Browser
+![prerequisits](https://github.com/kragmar/angular-elteik-knowledgebase/blob/develop/doc/2020-03-13%2009_59_35-Angular%20-%20Browser%20support.png "prerequisits")
 
 
 ## Running the tests
@@ -40,7 +39,7 @@ tbd
 * [StackEdit](https://stackedit.io/) - 
 * [StackBlitz](https://stackblitz.com/) - 
 * [Firebase](https://firebase.google.com/) - Host, database
-* [GitLab](https://about.gitlab.com/) - CI/CD
+* [GitLab]((https://about.gitlab.com/)) - CI/CD
 
 ## Versioning
 
