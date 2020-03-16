@@ -2,6 +2,7 @@ image: node:latest
 
 variables:
   CI_ARTIFACT_NAME: ${CI_PROJECT_NAME}-dist.zip
+  CLI_VERSION: 9.0.3
 
 before_script:
     - apt-get update -qy
@@ -11,12 +12,14 @@ stages:
     - build
     - deploy
 
-#test:
-#    type: test
-#    stage: test
-#    script:
-#        - echo "[TEST] Running tests"
-#        - npm run test
+test:
+    type: test
+    stage: test
+    image: trion/ng-cli-karma:${CLI_VERSION}
+    allow_failure: false
+    script:
+        - echo "[TEST] Running tests"
+        - ng test --progress false --watch false
 
 build:
     type: build
