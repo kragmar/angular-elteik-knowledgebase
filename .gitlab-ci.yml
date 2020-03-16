@@ -2,25 +2,14 @@ image: node:latest
 
 variables:
   CI_ARTIFACT_NAME: ${CI_PROJECT_NAME}-dist.zip
-  CLI_VERSION: 9.0.3
 
 before_script:
     - apt-get update -qy
 
 stages:
-    - test
     - build
+    - test
     - deploy
-
-test:
-    type: test
-    stage: test
-    image: trion/ng-cli-karma:${CLI_VERSION}
-    allow_failure: false
-    script:
-        - npm install --quiet
-        - echo "[TEST] Running tests"
-        - ng test --progress false --watch false
 
 build:
     type: build
@@ -36,8 +25,19 @@ build:
         expire_in: 1 week
         paths:
             - dist/
-    only:
-        - master
+#    only:
+#        - master
+
+test:
+    type: test
+    stage: test
+    cahce:
+        policy: pull
+        paths:
+            - node_modules/
+    script:
+        - echo "[TEST] Running tests"
+        - npm run test-ci
 
 deploy_prod:
     stage: deploy
@@ -48,6 +48,8 @@ deploy_prod:
         - build
     cache:
         policy: pull
+        paths:
+            - node_modules/
     script:
         - echo "[DEPLOY] Deploying the app"
         - npm install firebase-tools

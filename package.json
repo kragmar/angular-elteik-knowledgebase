@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-prod": "ng build --prod",
+    "test-ci": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN --non-interactive --project eltevedtem"
   },
   "private": true,
