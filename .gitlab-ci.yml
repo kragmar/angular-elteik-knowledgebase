@@ -31,7 +31,7 @@ build:
 test:
     type: test
     stage: test
-    cahce:
+    cache:
         policy: pull
         paths:
             - node_modules/
