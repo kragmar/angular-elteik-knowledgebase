@@ -18,6 +18,7 @@ test:
     image: trion/ng-cli-karma:${CLI_VERSION}
     allow_failure: false
     script:
+        - npm install --quiet
         - echo "[TEST] Running tests"
         - ng test --progress false --watch false
 
