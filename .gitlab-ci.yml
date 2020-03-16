@@ -29,6 +29,7 @@ build:
         - npm install --quiet
         - npm run build-prod
     artifacts:
+        expire_in: 1 week
         paths:
             - dist/
     only:
