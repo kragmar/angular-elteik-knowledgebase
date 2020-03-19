@@ -3,7 +3,7 @@
 
 A knowlegdebase for ELTE IK students, allowing easy access to information about their classes, lectures, teachers.
 
-[![Build status](https://img.shields.io/gitlab/pipeline/kragmar/angular-elteik-knowledgebase)](https://gitlab.com/kragmar/angular-elteik-knowledgebase/pipelines)
+[![Build status](https://img.shields.io/gitlab/pipeline/kragmar/angular-elteik-knowledgebase/master)](https://gitlab.com/kragmar/angular-elteik-knowledgebase/pipelines?scope=branches)
 [![coverage report](https://gitlab.com/kragmar/angular-elteik-knowledgebase/badges/master/coverage.svg)](https://gitlab.com/kragmar/angular-elteik-knowledgebase/-/commits/master)
 
 ### Prerequisites
