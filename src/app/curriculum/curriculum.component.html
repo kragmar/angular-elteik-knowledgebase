@@ -1,0 +1,14 @@
+<div class="button-row">
+    <button mat-fab color="primary" (click)="onButtonPress('A')">A</button>
+    <button mat-fab color="primary" (click)="onButtonPress('B')">B</button>
+    <button mat-fab color="primary" (click)="onButtonPress('C')">C</button>
+</div>
+<div *ngFor="let a of arr">
+    {{a}}
+</div>
+<mat-card class="img-card mat-elevation-z4">
+    <mat-card-header>
+        <mat-card-title>{{ imgName }} szakirány</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="http://gabeee.web.elte.hu/misc/tanterv_18_{{imgName}}.png" alt="Photo of a {{imgName}} curriculum">
+</mat-card>
