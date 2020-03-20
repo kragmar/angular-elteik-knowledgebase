@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class CurriculumComponent implements OnInit {
 
   imgName: string;
-  arr: number[] = [1, 2, 3];
 
   constructor() { }
 
