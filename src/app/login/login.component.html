@@ -1,3 +1,27 @@
-<p>
-login works!
-</p>
+<h1>Üdv ELTÉvedt hallgató!</h1>
+<div class="login-content">
+  <mat-card class="mat-elevation-z6">
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h2>Belépő felület</h2>
+        <mat-form-field class="login-input">
+          <input matInput placeholder="Email" formControlName="email" required autofocus>
+          <mat-error *ngIf="isFieldInvalid('email')">
+            Add meg az email címed!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="login-input">
+          <input matInput type="password" placeholder="Jelszó" formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('password')">
+            Add meg a jelszavad!
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Belépés</button>
+        <div class="form-others">
+          <a routerLink="/register" class="form-register">Regisztráció</a>
+          <a routerLink="/forgot-password" class="form-forgot-password">Elfelejtett jelszó</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
