@@ -1,0 +1,36 @@
+<mat-form-field>
+    <mat-label>Szűrő</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+</mat-form-field>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+   
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nev">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Név </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nev}} </mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="szoba">
+      <mat-header-cell *matHeaderCellDef> Szoba </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.szoba}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="egyeb">
+        <mat-header-cell *matHeaderCellDef> Egyéb </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.egyeb}} </mat-cell>
+      </ng-container>
+  
+
+ 
+</mat-table>
