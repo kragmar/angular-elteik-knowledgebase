@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
 import { MapComponent } from './map/map.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component:  ForgotPasswordComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'curriculum', component: CurriculumComponent },
   { path: 'map', component: MapComponent },
   { path: 'contacts', component: ContactsComponent }
