@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn$ = new BehaviorSubject(this.authService.isLoggedIn).asObservable();
+    this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 
   onLogout() {

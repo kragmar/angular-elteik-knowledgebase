@@ -11,9 +11,8 @@ import { MapComponent } from './map/map.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AuthGuard } from './auth/auth.guard';
 
-
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component:  ForgotPasswordComponent },
@@ -21,7 +20,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'curriculum', component: CurriculumComponent },
   { path: 'map', component: MapComponent },
-  { path: 'contacts', component: ContactsComponent }
+  { path: 'contacts', component: ContactsComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
