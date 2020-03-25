@@ -52,9 +52,10 @@ export class AuthService {
   }
 
   get isLoggedIn(): Observable<boolean> {
-    /* const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null); */
-
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user !== null) {
+      this.loggedIn.next(true);
+    }
     return this.loggedIn.asObservable();
   }
 
