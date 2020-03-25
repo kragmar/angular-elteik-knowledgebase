@@ -5,7 +5,7 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <h2>Belépő felület</h2>
         <mat-form-field class="login-input">
-          <input matInput placeholder="Email" formControlName="email" required autofocus>
+          <input matInput placeholder="Email" formControlName="email" required>
           <mat-error *ngIf="isFieldInvalid('email')">
             Add meg az email címed!
           </mat-error>
@@ -16,7 +16,7 @@
             Add meg a jelszavad!
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Belépés</button>
+        <button mat-raised-button color="primary" [disabled]="loginForm.invalid" type="submit">Belépés</button>
         <div class="form-others">
           <a routerLink="/register" class="form-register">Regisztráció</a>
           <a routerLink="/forgot-password" class="form-forgot-password">Elfelejtett jelszó</a>

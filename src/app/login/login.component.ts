@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.get('email').value, this.loginForm.get('password').value);
     }
+    this.formSubmitAttempt = true;
   }
 
 }
