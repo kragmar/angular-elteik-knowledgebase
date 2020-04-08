@@ -10,11 +10,10 @@ export interface ContactsTable {
 }
 
 const ELEMENT_DATA: ContactsTable[] = [
-  {nev: 'Ex Ample', email: 'ex@mple.hu' , szoba: '101', egyeb: 'lol'},
-  {nev: 'Csa Csi', email: 'cs@csi.hu' , szoba: '69', egyeb: 'kek'},
-  {nev: 'Kecske Béka', email: 'pld@mple.hu' , szoba: '420', egyeb: 'bur'}
+  {nev: 'Ex Ample', email: 'ex(AT)mple(DOT)hu' , szoba: '101', egyeb: 'lol'},
+  {nev: 'Csa Csi', email: 'cs(AT)csi(DOT)hu' , szoba: '69', egyeb: 'kek'},
+  {nev: 'Kecske Béka', email: 'pld(AT)mple(DOT)hu' , szoba: '420', egyeb: 'bur'}
 ];
-
 /**
  * @title Basic use of `<table mat-table>`
  */
@@ -24,6 +23,7 @@ const ELEMENT_DATA: ContactsTable[] = [
   templateUrl: './contacts.component.html',
 })
 export class ContactsComponent implements OnInit {
+
   displayedColumns: string[] = ['nev', 'email', 'szoba', 'egyeb'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -39,9 +39,18 @@ export class ContactsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  changeEmail(value: string): string {
+    value = value.replace(/\((AT)+\)/g, "@");
+    value = value.replace(/\((DOT)+\)/g, ".");
+
+    return value;
+  }
+
+  resetEmail(value: string): string {
+    value = value.replace(/@/g, "(AT)");
+    value = value.replace(/\./g, "(DOT)");
+
+    return value;
+  }
+
 }
-
-
-/**  Copyright 2019 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */

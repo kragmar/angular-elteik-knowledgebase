@@ -17,7 +17,9 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      <mat-cell *matCellDef="let element" 
+      (mouseover)="element.email = changeEmail(element.email)"
+      (mouseleave)="element.email = resetEmail(element.email)"> {{element.email}} </mat-cell>
     </ng-container>
   
     <!-- Symbol Column -->
@@ -29,7 +31,7 @@
     <ng-container matColumnDef="egyeb">
         <mat-header-cell *matHeaderCellDef> Egyéb </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.egyeb}} </mat-cell>
-      </ng-container>
+    </ng-container>
   
 
  
