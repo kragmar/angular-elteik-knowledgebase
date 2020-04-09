@@ -1,0 +1,30 @@
+.img-card {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.building-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.building-row > button {
+    margin-right: 2%;
+}
+
+.button-row > button {
+    margin-right: 2%;
+}
+
+.button-row > button:last-child {
+    margin-right: 0;
+}
