@@ -1,0 +1,45 @@
+h1 {
+  margin: 2rem 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+.login-content {
+  min-width: 20%;
+}
+
+mat-card {
+  min-height: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.login-input {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: .5rem;
+}
+
+.form-others {
+  display: flex;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.form-register {
+  margin-right: auto;
+}
+
+.form-register,
+.form-forgot-password {
+  text-decoration: none;
+}
