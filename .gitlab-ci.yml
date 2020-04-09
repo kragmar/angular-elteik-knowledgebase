@@ -4,63 +4,63 @@ variables:
   CI_ARTIFACT_NAME: ${CI_PROJECT_NAME}-dist.zip
 
 before_script:
-    - apt-get update -qy
+  - apt-get update -qy
 
 stages:
-    - build
-    - test
-    - deploy
+  - build
+  - test
+  - deploy
 
 build:
-    type: build
-    stage: build
-    cache:
-        paths:
-            - node_modules/
-    script:
-        - echo "[BUILD] Building the app"
-        - npm install --quiet
-        - npm run build-prod
-    artifacts:
-        expire_in: 1 week
-        paths:
-            - dist/
-    only:
-        - master
-        - develop
+  type: build
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - echo "[BUILD] Building the app"
+    - npm install --quiet
+    - npm run build-prod
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist/
+  only:
+    - master
+    - develop
 
 test:
-    type: test
-    stage: test
-    environment: test
-    cache:
-        policy: pull
-        paths:
-            - node_modules/
-    script:
-        - apt update && apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
-        - echo "[TEST] Running tests"
-        - npm run test-ci
-        - npm run e2e-ci
-    artifacts:
-        paths:
-            - coverage/
-    only:
-        - master
-        - develop
+  type: test
+  stage: test
+  environment: test
+  cache:
+    policy: pull
+    paths:
+      - node_modules/
+  script:
+    - apt update && apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+    - echo "[TEST] Running tests"
+    - npm run test-ci
+    - npm run e2e-ci
+  artifacts:
+    paths:
+      - coverage/
+  only:
+    - master
+    - develop
 
 deploy_prod:
-    stage: deploy
-    environment: production
-    dependencies:
-        - build
-    cache:
-        policy: pull
-        paths:
-            - node_modules/
-    script:
-        - echo "[DEPLOY] Deploying the app"
-        - npm install firebase-tools
-        - npm run deploy
-    only:
-        - master
+  stage: deploy
+  environment: production
+  dependencies:
+    - build
+  cache:
+    policy: pull
+    paths:
+      - node_modules/
+  script:
+    - echo "[DEPLOY] Deploying the app"
+    - npm install firebase-tools
+    - npm run deploy
+  only:
+    - master
