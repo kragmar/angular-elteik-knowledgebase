@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurriculumComponent implements OnInit {
 
+  imgName: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.imgName = "A"
+  }
+
+  onButtonPress(value: string): void {
+    this.imgName = value;
+    console.log(value);
   }
 
 }

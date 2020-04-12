@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "angular-elteik-knowledgebase"
+  "defaultProject": "angular-elteik-knowledgebase",
+  "cli": {
+    "analytics": "095dab12-aeef-4b59-8b5e-77f471005bb4"
+  }
 }

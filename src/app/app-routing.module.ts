@@ -9,18 +9,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
 import { MapComponent } from './map/map.component';
 import { ContactsComponent } from './contacts/contacts.component';
-
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component:  ForgotPasswordComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'curriculum', component: CurriculumComponent },
-  { path: 'map', component: MapComponent },
-  { path: 'contacts', component: ContactsComponent }
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'curriculum', component: CurriculumComponent, canActivate: [AuthGuard] },
+  { path: 'map', component: MapComponent, canActivate: [AuthGuard] },
+  { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

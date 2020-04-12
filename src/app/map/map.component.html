@@ -1,0 +1,22 @@
+<div class="building-row">
+    <button mat-fab color="primary" (click)="switchBuilding('d')">Déli</button>
+    <button mat-fab color="primary" (click)="switchBuilding('e')">Északi</button>
+</div>
+<div class="button-row">
+    <button mat-flat-button color="primary" (click)="onButtonPress('00')">00</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('0')">0</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('1')">1</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('2')">2</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('3')">3</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('4')">4</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('5')">5</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('6')">6</button>
+    <button mat-flat-button color="primary" (click)="onButtonPress('7')">7</button>
+</div>
+
+<mat-card class="img-card mat-elevation-z4">
+    <!-- <mat-card-header>
+        <mat-card-title>{{ imgName }} szakirány</mat-card-title>
+    </mat-card-header> -->
+    <img mat-card-image src="http://gabeee.web.elte.hu/map/{{building}}map_{{imgName}}.jpg" alt="Photo of a {{imgName}} curriculum">
+</mat-card>
